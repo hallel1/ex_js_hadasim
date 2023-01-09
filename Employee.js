@@ -19,10 +19,9 @@ function createEmployeeCard(name, email) {
 
     employee_div.id = 'employeeTagId';
     employee_div.style.width = "100px";
-    employee_div.style.padding = "50px 10px 20px 30px";
-    employee_div.style.paddingTop = "0px";
-
+    employee_div.style.padding = "0px 10px 20px 30px";
     employee_div.style.border = "2px solid black";
+
     all_employees.appendChild(employee_div)
     createField(employee_div, name, "name")
     employee_div.appendChild(document.createElement("br"))
