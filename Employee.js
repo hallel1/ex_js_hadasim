@@ -8,7 +8,7 @@ window.onload = (event) => {
 };
 
 function createForm() {
-    let form = document.getElementById("form")
+    let form = document.getElementById("form_fields")
     createFormField(form, NAME, "name:", "text")
     createFormField(form, EMAIL, "email:","text")
 }
