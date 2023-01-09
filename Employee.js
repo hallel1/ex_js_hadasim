@@ -29,9 +29,10 @@ function createEmployeeCard(name, email) {
     let id = getRandomId()
     console.log(id)
     employee_div.id = 'employeeTagId_' + id;
-    employee_div.style.width = "100px";
+    employee_div.style.width = "20%";
     employee_div.style.padding = "0px 10px 20px 30px";
     employee_div.style.border = "2px solid black";
+    employee_div.style.float = "left";
 
     all_employees.appendChild(employee_div)
     createField(employee_div, name, "name")
