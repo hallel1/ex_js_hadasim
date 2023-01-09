@@ -2,13 +2,14 @@ import {NAME, EMAIL} from "./consts.js";
 
 export function createForm() {
     let form = document.getElementById("form_fields")
-    createFormField(form, NAME, "name:", "text")
-    createFormField(form, EMAIL, "email:","text")
+    createFormField(form, NAME, "name: ", "text")
+    createFormField(form, EMAIL, "email: ","text")
 }
 
 function createFormField(form, field_name, field_label, inputType) {
     form.appendChild(createFormFieldLabel(field_name, field_label))
     form.appendChild(createFormFieldInput(field_name, inputType))
+    form.appendChild(document.createElement("br"))
 }
 
 function createFormFieldLabel(field_name, field_label) {
