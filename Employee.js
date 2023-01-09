@@ -15,26 +15,23 @@ function createEmployee() {
 
 function createEmployeeCard(name, email) {
     let all_employees = document.getElementById("allEmployees");
-    let employee_div = document.createElement("employee");
+    let employee_div = document.createElement("div");
 
     employee_div.id = 'employeeTagId';
     employee_div.style.width = "100px";
-    employee_div.style.height = "100px";
-    employee_div.backgroundColor = "red"
     employee_div.style.padding = "50px 10px 20px 30px";
     employee_div.style.paddingTop = "0px";
-    employee_div.style.marginTop = "100px";
-    employee_div.style.border = "1";
 
+    employee_div.style.border = "2px solid black";
     all_employees.appendChild(employee_div)
-    createField(employee_div, name)
+    createField(employee_div, name, "name")
     employee_div.appendChild(document.createElement("br"))
-    createField(employee_div, email)
+    createField(employee_div, email, "email")
 }
 
-function createField(employee_div, field_name) {
-    let field = document.createElement(field_name);
-    field.innerHTML = field_name;
+function createField(employee_div, employee_detail, field_name) {
+    let field = document.createElement("div");
+    field.innerHTML = field_name + " : " + employee_detail;
     document.getElementById(employee_div.id).appendChild(field);
 
 }
