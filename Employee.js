@@ -30,10 +30,10 @@ function createEmployeeCard(name, email) {
     createField(employee_div, email)
 }
 
-function createField(father_div, field_name) {
+function createField(employee_div, field_name) {
     let field = document.createElement(field_name);
     field.innerHTML = field_name;
-    document.getElementById(father_div.id).appendChild(field);
+    document.getElementById(employee_div.id).appendChild(field);
 
 }
 
