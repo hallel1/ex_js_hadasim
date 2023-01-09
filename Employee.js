@@ -1,4 +1,4 @@
-// import {NAME, EMAIL} from "./consts";
+import {NAME, EMAIL} from "./consts.js";
 
 window.onload = (event) => {
     const submit = document.getElementById("submitButton");
@@ -7,8 +7,8 @@ window.onload = (event) => {
 };
 
 function createEmployee() {
-    let name = document.getElementById("a_name").value;
-    let email = document.getElementById("a_email").value;
+    let name = document.getElementById(NAME).value;
+    let email = document.getElementById(EMAIL).value;
     createEmployeeCard(name, email)
 }
 function createEmployeeCard(name, email){
@@ -27,7 +27,7 @@ function createEmployeeCard(name, email){
     createField(employee_div,name)
     createField(employee_div,email)
 }
-function createField(father_div,field_name,){
+function createField(father_div,field_name){
     let field = document.createElement(field_name);
     field.innerHTML = field_name;
     document.getElementById(father_div.id).appendChild(field);
