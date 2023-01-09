@@ -10,7 +10,9 @@ window.onload = (event) => {
 function createEmployee() {
     let name = document.getElementById(NAME).value;
     let email = document.getElementById(EMAIL).value;
-    createEmployeeCard(name, email)
+    createEmployeeCard(name, email);
+    document.getElementById(NAME).value = "";
+    document.getElementById(EMAIL).value = "";
 }
 
 function getRandomId() {
