@@ -19,7 +19,7 @@ function getRandomId() {
     return Math.floor((1 + Math.random()) * 0x10000)
         .toString(16)
         .substring(1);
-    
+
 
 }
 
@@ -45,6 +45,20 @@ function createField(employee_div, employee_detail, field_name) {
     field.innerHTML = field_name + " : " + employee_detail;
     document.getElementById(employee_div.id).appendChild(field);
 
+}
+
+document.getElementById("allEmployees")
+    .addEventListener("mouseover", changeCard);
+document.getElementById("allEmployees")
+    .addEventListener("mouseout", resetCard);
+function changeCard(event) {
+    let card = document.getElementById(event.target.id)
+    card.style.backgroundColor = "pink"
+}
+
+function resetCard(event) {
+    let card = document.getElementById(event.target.id)
+    card.style.backgroundColor = "white"
 }
 
 
