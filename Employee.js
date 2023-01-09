@@ -14,7 +14,7 @@ function createEmployee() {
 function createEmployeeCard(name, email){
     
     let employee_div = document.createElement("employee");
-
+    employee_div.id = 'employeeTagId';
     employee_div.style.width = "100px";
     employee_div.style.height = "100px";
     employee_div.backgroundColor = "red"
@@ -30,7 +30,7 @@ function createEmployeeCard(name, email){
 function createField(father_div,field_name,){
     let field = document.createElement(field_name);
     field.innerHTML = field_name;
-    document.getElementById(father_div).appendChild(field);
+    document.getElementById(father_div.id).appendChild(field);
 
 }
 
