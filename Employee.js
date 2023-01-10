@@ -1,4 +1,4 @@
-import {NAME, EMAIL} from "./consts.js";
+import {NAME, EMAIL, DELETE_BUTTON_ID,CLASS_EMPLOYEE_CARD} from "./consts.js";
 import {createForm} from "./CreateForm.js";
 
 window.onload = (event) => {
@@ -27,8 +27,9 @@ function createEmployeeCard(name, email) {
     let all_employees = document.getElementById("allEmployees");
     let employee_div = document.createElement("div");
     let id = getRandomId()
-    console.log(id)
+    console.log("create "+ id)
     employee_div.id = 'employeeTagId_' + id;
+    employee_div.className = CLASS_EMPLOYEE_CARD;
     employee_div.style.width = "20%";
     employee_div.style.padding = "0px 10px 20px 30px";
     employee_div.style.border = "2px solid black";
@@ -51,14 +52,33 @@ document.getElementById("allEmployees")
     .addEventListener("mouseover", changeCard);
 document.getElementById("allEmployees")
     .addEventListener("mouseout", resetCard);
+
+
+
 function changeCard(event) {
     let card = document.getElementById(event.target.id)
+    console.log("hii "+event.target.id)
+    if(card.className !== CLASS_EMPLOYEE_CARD){
+        return;
+    }
     card.style.backgroundColor = "pink"
+    let deleteButton = document.createElement("button")
+    deleteButton.innerText = "delete"
+    deleteButton.id = DELETE_BUTTON_ID
+    card.appendChild(deleteButton)
+
+    deleteButton.addEventListener("click",deleteCard)
 }
 
 function resetCard(event) {
     let card = document.getElementById(event.target.id)
+    console.log("bye "+event.target.id)
     card.style.backgroundColor = "white"
+    document.getElementById(DELETE_BUTTON_ID).remove()
 }
 
+function deleteCard() {
+    document.getElementById(DELETE_BUTTON_ID).parentElement.remove()
+
+}
 
